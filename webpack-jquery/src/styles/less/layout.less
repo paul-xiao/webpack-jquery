@@ -1,0 +1,215 @@
+html,body{height: 100%;}
+body{
+	font-family:@font-family;  
+	font-size: @font-size-base; 
+}
+
+.@{css-prefix}header{
+	height: 60px;
+	line-height: 60px;
+	background: @theme-color;
+}
+.@{css-prefix}container{
+	display: flex;
+	height:calc(~"100% - 100px");   //calc在less编译时被计算的解决办法
+	box-sizing: border-box;
+
+
+	.@{css-prefix}left-aside{
+		width: 200px;
+		height: 100%;
+		overflow: auto;	
+		background:lighten(@theme-color, 10%);
+		transition: width ease-in-out 0.5s;
+		text-align: center;
+		position: relative;
+		&::-webkit-scrollbar {
+			  width: 0px;
+			  height: 5px;
+			}
+		.@{css-prefix}nav-toggle{
+			    height: 30px;
+			    line-height: 30px;
+			    text-align: center;
+			    padding:5px 0;
+			    width: 200px;
+			    background:darken(@theme-color, 20%);
+			    position: fixed;
+			    z-index: 999;
+			    transition: width ease-in-out 0.5s;
+			a{display: inline-block;}
+			span{
+				    background: #fff;
+				    height: 2px;
+				    width: 20px;
+				    display: block;
+				    margin-bottom: 2px;
+				    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+				    position: relative;
+				    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.7)000;
+			}
+		}
+
+			 /*nav*/
+        .@{css-prefix}nav{
+        	padding-top: 40px;
+        	li{
+        		min-height: 30px;
+        		line-height: 30px;
+        		color: #FFF;
+        		text-align: left;
+        		position: relative;
+        		a{
+        			padding: 5px 0;
+        			text-decoration: none;
+        			color:#FFF;
+        			display: inline-block;
+        			width: calc(~"100% - 15px");
+        			cursor: pointer;
+        			padding-left: 15px;
+        			transition: background 0.5s ease;
+        			
+        			&:after{
+        				content:'';
+        			}
+        			&:hover{
+        				background:darken(@theme-color, 15%);
+        				
+        			}
+        			i{
+        				padding: 0 5px;
+        			}
+        		    .pull-right-container{
+        		    	position: absolute;
+        		    	right: 5px;
+        		    	i{
+        		    		font-size: 12px;
+        		    	}
+        		    }	
+        		}
+        		 .@{css-prefix}sub-nav{
+                   display: none;
+                  // transition: all 0.5s ease-out;
+        		 }
+
+        		
+        	}
+        }
+
+		&.expand{	
+			.@{css-prefix}nav-toggle{
+				span{
+
+				}
+			}
+			/**/
+
+		
+		}
+
+		&.collapse{
+			width: 50px;
+			overflow: visible;
+	          .@{css-prefix}nav-toggle{
+	          	width: 50px;
+				span:nth-child(1){
+	              transform: rotate(225deg);
+	              top: 2px;
+				};
+				span:nth-child(2){
+	             display: none;
+				};
+				span:nth-child(3){
+				  top: -2px;
+	              transform: rotate(135deg);
+				};
+			}
+			/*---*/
+			.@{css-prefix}nav{
+				padding-top: 40px;
+				li{
+					a{
+						i{
+							padding: 0;
+						}
+						span{
+							display: none;
+						}
+                 
+					}
+                 /*---sub---*/
+					.@{css-prefix}sub-nav{
+					   display: none!important;
+
+				    }
+
+				   &:hover{
+				   	  a{
+				   	  	span.@{css-prefix}nav-title{	   	  	
+						    position: absolute;
+						    width: 200px;
+						    background: @menu-dark-active-bg ;
+						    height: 40px;
+						    display: inline-block;
+						    left: 50px;
+						    top: 0;
+						    line-height: 40px;
+						    text-align: center;
+						    z-index: 999;
+				   	  	}
+				   	  	span:nth-child(2){
+
+				   	  	}
+				   	  }
+				   	 .@{css-prefix}sub-nav{
+				   	 	background: lighten(@menu-dark-active-bg, 10%) ;
+					    display: block!important;
+					    position: absolute;
+				   	  	left: 50px;
+				   	  	top: 40px;
+				   	  	width: 200px;
+				   	  	max-height: 400px;
+				   	    z-index: 999;
+				   	  	overflow: auto;
+				   	  	span{
+				   	  		display: inline-block;
+				   	  	}
+
+
+				   	  	&::-webkit-scrollbar{
+				   	  		width: 2px;
+				   	  	}    //滚动条整体部分
+						&::-webkit-scrollbar-button{}   //滚动条两端的按钮
+						&::-webkit-scrollbar-track{
+							background: #fff;
+						}   // 外层轨道
+						&::-webkit-scrollbar-track-piece{}    //内层轨道，滚动条中间部分（除去）
+						&::-webkit-scrollbar-thumb{
+							background: @menu-dark-active-bg;
+						} //滚动条里面可以拖动的那个
+						&::-webkit-scrollbar-corner{}   //边角
+						&::-webkit-resizer{}   ///定义右下角拖动块的样式
+				    }
+				   } 
+				}
+
+			}
+	    }
+
+
+
+		
+	}
+	.@{css-prefix}right-content{
+		flex: 1;
+        background:#fff; 
+	}
+}
+
+.@{css-prefix}footer{
+	clear: both;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	background:lighten(@theme-color, 1%);
+}	

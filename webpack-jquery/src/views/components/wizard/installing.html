@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>安装向导</title>
+   <style type="text/css">
+          .step-four{
+     /* padding: 2em 0;
+      background: linear-gradient(to right, #2c3b4e, #4a688a, #2c3b4e);*/
+        }
+        .progress{
+               height: 20px;
+             background: #f2f2f2;
+             padding: 5px;
+             overflow: visible;
+             border-radius: 20px;
+             border-top: 1px solid #f2f2f2;
+             border-bottom: 1px solid #7992a8;
+             margin-top: 50px;
+        }
+        .progress .progress-bar{
+           border-radius: 20px;
+           position: relative;
+           animation: animate-positive 2s;
+        }
+
+        .progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+        .progress .progress-value{
+           display: block;
+           padding: 3px 7px;
+           font-size: 13px;
+           color: #fff;
+           border-radius: 4px;
+           background: #191919;
+           border: 1px solid #000;
+           position: absolute;
+           top: -40px;
+           right: -10px;
+        }
+
+        .progress.active .progress-bar, .progress-bar.active {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+        .progress .progress-value:after{
+           content: "";
+           border-top: 10px solid #191919;
+           border-left: 10px solid transparent;
+           border-right: 10px solid transparent;
+           position: absolute;
+           bottom: -6px;
+           left: 26%;
+        }
+        .progress-bar.active{
+           animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+        }
+        @-webkit-keyframes animate-positive{
+           0% { width: 0; }
+        }
+        @keyframes animate-positive{
+           0% { width: 0; }
+        }
+
+        .progress-bar-info {
+          background-color: #5bc0de;
+      }
+
+.progress-striped .progress-bar, .progress-bar-striped {
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+
+@-o-keyframes progress-bar-stripes{
+   from{background-position:40px 0}to{background-position:0 0}}
+   @keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
+   </style>
+</head>
+<body>
+<div class="wizard">
+<header>
+	<div class="logo"><img src="../img/logo.jpg" height="60">IT智能设备监测系统</div>
+	<span>安装向导</span>
+</header>
+<section>
+	<div class="tips">
+		<span>开始部署</span>
+		<span>？</span>
+		<p class="tip">欢迎你使用腾讯微信软件及服务！
+
+为使用腾讯微信软件（以下简称“本软件”）及服务，你应当阅读并遵守《腾讯微信软件许可及服务协议》（以下简称“本协议”），以及《腾讯服务协议》和《QQ号码规则》。请你务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款，以及开通或使用某项服务的单独协议，并选择接受或不接受。限制、免责条款可能以加粗形式提示你注意。
+
+除非你已阅读并接受本协议所有条款，否则你无权下载、安装或使用本软件及相关服务。你的下载、安装、使用、获取微信帐号、登录等行为即视为你已阅读并同意上述协议的约束。
+
+如果你未满18周岁，请在法定监护人的陪同下阅读本协议及其他上述协议，并特别注意未成年人使用条款。</p>
+	</div>
+	<div class="content">
+     <div class="step-four">
+         <div class="progress">
+               <div class="progress-bar progress-bar-info progress-bar-striped active">
+                  <div class="progress-value">0%</div>
+               </div>
+            </div>
+          <div class="progress-info">
+             正在安装数据库。。。
+          </div>  
+     </div>
+	</div>
+	<div class="opt">
+      <a class="btn btn-primary">上一步</a>
+		<a class="btn btn-primary disabled">下一步</a>
+
+	</div>
+</section>
+<footer>版权所有 &copy; 2018 易达天成软件有限公司</footer>
+</div>
+</body>
+</html>

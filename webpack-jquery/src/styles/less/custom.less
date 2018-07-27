@@ -1,0 +1,65 @@
+.light{
+	background: #5da6f3;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.x-wrap{
+	padding: 15px;
+}
+
+.color-demo div{
+padding:10px 0;
+text-align: center;
+margin-bottom:5px;
+}
+
+.bg-primary{
+	background: @primary-color;
+	color: #FFF;
+}
+
+.bg-info{
+	background: @info-color;
+	color: #FFF;
+}
+.bg-success{
+	background: @success-color;
+	color: #FFF;
+}
+.bg-error{
+	background: @error-color;
+	color: #FFF;
+}
+.bg-link{
+	background: @link-color;
+	color: #FFF;
+}
+.bg-link-hover{
+	background: @link-hover-color;
+	color: #FFF;
+}
+.bg-active-hover{
+	background: @link-active-color;
+	color: #FFF;
+}
+.bg-selected{
+	background: @selected-color;
+	color: #FFF;
+}
+
+@primary-color          : #2d8cf0;
+@info-color             : #2db7f5;
+@success-color          : #19be6b;
+@warning-color          : #ff9900;
+@error-color            : #ed3f14;
+@link-color             : #2D8cF0;
+@link-hover-color       : tint(@link-color, 20%);
+@link-active-color      : shade(@link-color, 5%);
+@selected-color         : fade(@primary-color, 90%);
+@tooltip-color          : #fff;
+@subsidiary-color       : #80848f;
+@rate-star-color        : #f5a623;
+@nav-bg                 : #fff;
+@theme-color            : #f8f8f9;
+@theme-font-color       : #495060;
