@@ -1,3 +1,5 @@
+@theme-color: @head-bg;
+
 html,body{height: 100%;}
 body{
 	font-family:@font-family;  
@@ -7,11 +9,42 @@ body{
 .@{css-prefix}header{
 	height: 60px;
 	line-height: 60px;
-	background: @theme-color;
+	background: @head-bg;
+	color:@text-color;
+	padding: 0 15px;
+	.@{css-prefix}logo{
+		height: 60px;
+	    line-height: 60px;
+	    display: inline-block;
+	    img{
+	    	vertical-align: middle;
+	    }
+	    span{
+	    	font-size: 30px;
+	    	font-weight: 700;
+	    	color:@text-color;
+	    	small{
+	    		font-size: 18px;
+	    	   font-weight: normal;
+	    	}
+	    }
+	}
+  .@{css-prefix}head-nav{
+  	display: inline-block;
+  	float: right;
+  	a{
+  		padding: 0 15px;
+  		color:@text-color;
+  		&:hover{
+  			color:@link-hover-color;
+  		}
+  	}
+  }
+
 }
 .@{css-prefix}container{
 	display: flex;
-	height:calc(~"100% - 100px");   //calc在less编译时被计算的解决办法
+	height:calc(~"100% - 60px");   //calc在less编译时被计算的解决办法
 	box-sizing: border-box;
 
 
@@ -19,7 +52,7 @@ body{
 		width: 200px;
 		height: 100%;
 		overflow: auto;	
-		background:lighten(@theme-color, 10%);
+		background:@theme-color;
 		transition: width ease-in-out 0.5s;
 		text-align: center;
 		position: relative;
@@ -28,8 +61,8 @@ body{
 			  height: 5px;
 			}
 		.@{css-prefix}nav-toggle{
-			    height: 30px;
-			    line-height: 30px;
+			    height: 40px;
+			    line-height: 40px;
 			    text-align: center;
 			    padding:5px 0;
 			    width: 200px;
@@ -37,7 +70,10 @@ body{
 			    position: fixed;
 			    z-index: 999;
 			    transition: width ease-in-out 0.5s;
-			a{display: inline-block;}
+			a{
+				display: inline-block;
+				position: relative;
+                top: -2px;}
 			span{
 				    background: #fff;
 				    height: 2px;
@@ -62,9 +98,9 @@ body{
         		a{
         			padding: 5px 0;
         			text-decoration: none;
-        			color:#FFF;
+        			color:@text-color;
         			display: inline-block;
-        			width: calc(~"100% - 15px");
+        			width:100%;
         			cursor: pointer;
         			padding-left: 15px;
         			transition: background 0.5s ease;
@@ -203,6 +239,7 @@ body{
 	.@{css-prefix}right-content{
 		flex: 1;
         background:#fff; 
+        overflow: auto;
 	}
 }
 
@@ -211,5 +248,7 @@ body{
 	height: 40px;
 	line-height: 40px;
 	width: 100%;
-	background:lighten(@theme-color, 1%);
+	background:@theme-color;
+	color: #FFF;
+	text-align: center;
 }	

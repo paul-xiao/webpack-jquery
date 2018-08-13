@@ -11,11 +11,11 @@
 
 .float-grid-columns(@class) {
     .col(@index) { // initial
-        @item: ~".@{col-prefix-cls}-span@{class}-@{index}";
+        @item: ~".@{col-prefix-cls}-@{index}";
         .col((@index + 1), @item);
     }
     .col(@index, @list) when (@index =< @grid-columns) { // general
-        @item: ~".@{col-prefix-cls}-span@{class}-@{index}";
+        @item: ~".@{col-prefix-cls}-@{index}";
         .col((@index + 1), ~"@{list}, @{item}");
     }
     .col(@index, @list) when (@index > @grid-columns) { // terminal
@@ -28,7 +28,7 @@
 }
 
 .loop-grid-columns(@index, @class) when (@index > 0) {
-    .@{col-prefix-cls}-span@{class}-@{index} {
+    .@{col-prefix-cls}-@{index} {
         display: block;
         width: percentage((@index / @grid-columns));
     }
@@ -48,7 +48,7 @@
 }
 
 .loop-grid-columns(@index, @class) when (@index = 0) {
-    .@{col-prefix-cls}-span@{class}-@{index} {
+    .@{col-prefix-cls}-@{index} {
         display: none;
     }
     .@{col-prefix-cls}@{class}-push-@{index} {

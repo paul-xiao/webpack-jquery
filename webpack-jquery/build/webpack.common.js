@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin=require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
@@ -14,8 +15,7 @@ module.exports = {
     entry:{//string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
      
         index:'./src/js/index.js',
-         grid:'./src/js/grid.js'
-       // wizard:'./src/js/wizard.js'
+        wjapp:'./src/js/wjapp.js'
 
     },
     output:{//指示webpack如何去输出，以及在哪里输出你的「bundle、asset和其他你所打包或使用webpack载入的任何内容」。
@@ -96,15 +96,20 @@ module.exports = {
         fs:"empty"
     },
     plugins: [
+         new CleanWebpackPlugin('dist/*.*', {
+          root: path.resolve(__dirname, "../"),
+          verbose: true,
+          dry: false
+          }),
         new HtmlWebpackPlugin({//简化了html文件的创建，以便为webpack包提供服务。
             filename:resolve('/dist/index.html'),//处理dirname路径的问题 ，这里等同于'../dist/index.html'
             template:'./src/index.html',
             chunks:['common','index']//选择加载的css和js,模块名对应上面entry接口的名称
         }),
-        new HtmlWebpackPlugin({
-            filename:resolve('/dist/grid.html'),
-            template:'./src/views/components/grid/index.html',
-            chunks:['common','grid']
+        new HtmlWebpackPlugin({//简化了html文件的创建，以便为webpack包提供服务。
+            filename:resolve('/dist/wjapp.html'),//处理dirname路径的问题 ，这里等同于'../dist/index.html'
+            template:'./src/views/components/wjapp/index.html',
+            chunks:['common','wjapp']//选择加载的css和js,模块名对应上面entry接口的名称
         }),
         new ExtractTextPlugin({//从bundle中提取出
             filename:(getPath)=>{

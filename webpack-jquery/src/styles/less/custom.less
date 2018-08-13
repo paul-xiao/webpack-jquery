@@ -26,6 +26,9 @@ margin-bottom:5px;
 .bg-success{
 	background: @success-color;
 	color: #FFF;
+}.bg-warning{
+	background: @warning-color;
+	color: #FFF;
 }
 .bg-error{
 	background: @error-color;
@@ -47,19 +50,102 @@ margin-bottom:5px;
 	background: @selected-color;
 	color: #FFF;
 }
+.bg-tooltip{
+	background: @tooltip-color;
+	color: #000;
+}
+.bg-subsidiary{
+	background: @subsidiary-color;
+	color: #FFF;
+}
+.bg-rate-star{
+	background: @rate-star-color;
+	color: #FFF;
+}
+.bg-theme{
+	background: @theme-color ;
+	color: #fff;
+}
+.bg-title{
+	background: @title-color ;
+	color: #FFF;
+}
+.bg-text{
+	background: @text-color ;
+	color: #FFF;
+}
+.bg-background-color-base{
+	background: @background-color-base;
+	color: @text-color;
+}
+.bg-background-color-select-hover{
+	background: @background-color-select-hover;
+	color: @text-color;
+}
+.bg-tooltip-bg{
+	background: @tooltip-bg;
+	color: #FFF;
+}
+.bg-head-bg{
+	background: @head-bg;
+	color: @text-color;
+}
+.bg-table-thead{
+	background: @table-thead-bg;
+	color: @text-color;
+}
+.bg-table-td-stripe{
+	background: @table-td-stripe-bg;
+	color: @text-color;
+}
+.bg-table-td-hover{
+	background: @table-td-hover-bg;
+	color: @text-color;
+}
+.bg-table-td-highlight{
+	background: @table-td-highlight-bg;
+	color: @text-color;
+}
+.bg-menu-dark-title{
+	background: @menu-dark-title;
+	color: #FFF;
+}
+.bg-menu-dark-active{
+	background: @menu-dark-active-bg;
+	color: #FFF;
+}
+.bg-menu-dark-subsidiary-color{
+	background: @menu-dark-subsidiary-color;
+	color: @text-color;
+}
+.bg-menu-dark-group-title-color{
+	background: @menu-dark-group-title-color;
+	color: @text-color;
+}
+.bg-date-picker-cell-hover-bg{
+	background: @date-picker-cell-hover-bg;
+	color: @text-color;
+}
 
-@primary-color          : #2d8cf0;
-@info-color             : #2db7f5;
-@success-color          : #19be6b;
-@warning-color          : #ff9900;
-@error-color            : #ed3f14;
-@link-color             : #2D8cF0;
-@link-hover-color       : tint(@link-color, 20%);
-@link-active-color      : shade(@link-color, 5%);
-@selected-color         : fade(@primary-color, 90%);
-@tooltip-color          : #fff;
-@subsidiary-color       : #80848f;
-@rate-star-color        : #f5a623;
-@nav-bg                 : #fff;
-@theme-color            : #f8f8f9;
-@theme-font-color       : #495060;
+
+.anchor {
+	h2{
+	 display: inline-block;
+     }
+	a{
+	    opacity: 0;
+	    font-size: 24px;
+	    transition: opacity .2s ease-in-out;
+	    margin-left: 5px;
+	    position: relative;
+	    top: 2px;
+	}
+
+	&:hover{
+		a{
+			opacity: 1;
+		}
+	}
+}
+
+

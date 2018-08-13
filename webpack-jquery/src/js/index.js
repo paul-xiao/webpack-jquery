@@ -1,5 +1,5 @@
 import  "../styles/less/index.less";
-import  "../styles/fonts/iconfont.css";
+import  "../styles/less/fonts/iconfont.css";
 
 (function($){
 
@@ -26,16 +26,9 @@ xview.toggleNav = function(){
     $(this).find("i").last().removeClass("x-au").addClass("x-ad");
     }
     });
-    xview.Link();
 };
 
-xview.Link = function(){
-	$(".x-sub-nav li>a").click(function(){
 
-	$("section").empty().load("grid.html");
-
-    });
-};
 
 xview.init();
 })(window.jQuery);
