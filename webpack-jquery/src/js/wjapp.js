@@ -91,6 +91,7 @@ import  "../styles/less/fonts/iconfont.css";
   $("#publish").hide();
  });
  }();
+
 })(window.jQuery);
 
    
