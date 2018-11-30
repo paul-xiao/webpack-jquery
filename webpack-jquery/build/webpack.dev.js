@@ -1,9 +1,7 @@
 const baseWebpackConfig = require('./webpack.common.js');
-
 const path = require('path');
 const webpack = require('webpack');
 const merge = require("webpack-merge");
-
 module.exports = merge(baseWebpackConfig,{
     devServer:{//通过来自「webpack-dev-server」的这些选项，能够通过多种方式改变其行为。
         port:9000,//指定监听的端口号

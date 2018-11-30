@@ -29,14 +29,14 @@ npm install --save-dev file-loader
 
 - 加载数据
 ```js
-cnpm install --save-dev csv-loader xml-loader
+npm install --save-dev csv-loader xml-loader
 ```
 
 
 - HtmlWebpackPlugin clean-webpack-plugin
 ```js
-cnpm install --save-dev html-webpack-plugin
-cnpm install clean-webpack-plugin --save-dev
+npm install --save-dev html-webpack-plugin
+npm install clean-webpack-plugin --save-dev
 ```
 
 - 配置文件
@@ -126,3 +126,13 @@ __filename：全局变量，存储的是文件名
 ```
 
 # less theme
+
+
+# 新增webpack项目
+
+
+
+# font-awesome 
+<i class="fa fa-search"></i>
+<i class="fa fa-check-circle"></i>
+
